@@ -1,0 +1,31 @@
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: 
+    -webkit-gradient(144deg, rgb(4 46 184 / 46%) 4.5%, rgba(253, 253, 253, 0) 100%), 
+    -webkit-gradient(222deg, rgba(76, 11, 182, 0.60) 2.5%, rgba(226, 209, 215, 0.1) 80%), 
+    -webkit-gradient(113deg, rgba(10, 135, 250, 0.60) 4.5%, rgba(227, 231, 219, 0.00) 56%), 
+    #F7F8E9;
+  background: 
+    linear-gradient(144deg, rgb(4 46 184 / 46%) 4.5%, rgba(253, 253, 253, 0) 100%), 
+    linear-gradient(222deg, rgba(76, 11, 182, 0.60) 2.5%, rgba(226, 209, 215, 0.1) 80%), 
+    linear-gradient(113deg, rgba(10, 135, 250, 0.60) 4.5%, rgba(227, 231, 219, 0.00) 56%), 
+    #F7F8E9;
+  z-index: -1;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  font-size: 24px;
+  color: var(--color-text-primary);
+  transform: rotate(90deg);
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+  -webkit-user-select: none;
+}

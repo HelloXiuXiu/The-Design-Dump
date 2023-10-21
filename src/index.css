@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Authentic Sans Condensed";
+  src: url("./fonts/AUTHENTICSans-Condensed.woff");
+  src: url("./fonts/AUTHENTICSans-Condensed.woff2");
+}
+
+:root {
+  --container: 70vw;
+  --max-conteiner: 650px;
+  --min-conteiner: unset;
+
+  --color-text-primary: white;
+  --color-text-secondary: black;
+  --color-text-hover: #D1B993;
+  --color-background: black;
+  --color-disabled: #666666;
+
+  --text-shadow-hover: 0px 1px 10px var(--color-text-hover);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+ul, li, h1, h2, p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+button {
+  font: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Authentic Sans Condensed";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 630px) {
+  :root {
+    --container: 70vw;
+    --min-conteiner: 320px;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+}
+
+

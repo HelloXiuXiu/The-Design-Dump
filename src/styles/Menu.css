@@ -1,0 +1,217 @@
+.menu {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--container);
+  max-width: var(--max-conteiner);
+  min-width: var(--min-conteiner);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.menu-controls {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 180px;
+  z-index: 2;
+}
+
+.menu-controls button {
+  width: 140px;
+  height: 40px;
+  background: var(--color-background);
+  border: 2px solid var(--color-background);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  user-select: none;
+  transition: all 1s;
+}
+
+.menu-controls button.menu-left {
+  border-radius: 180px 0px 0px 180px;
+}
+
+.menu-controls button.menu-right {
+  border-radius: 0px 180px 180px 0px;
+}
+
+.menu-controls .white-box {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  border-top: 2px solid var(--color-background);
+  border-bottom: 2px solid var(--color-background);
+  transition: all 1s;
+}
+
+.menu.open .menu-controls .white-box,
+.menu.gallery .menu-controls .white-box {
+  border-top: 2px solid var(--color-disabled);
+  border-bottom: 2px solid var(--color-disabled);
+  transition: all 1s;
+}
+
+.menu.open .menu-controls button,
+.menu.gallery .menu-controls button {
+  border: 2px solid var(--color-disabled);
+  color: var(--color-disabled);
+  transition: all 1s;
+}
+
+.menu-body {
+  max-height: 0px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 440px;
+  padding: 0 60px;
+  border-radius: 20px 20px 0px 0px;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  pointer-events: none;
+  transition: all 1s;
+}
+
+.menu-body .submit-button {
+  position: absolute;
+  left: 50px;
+  top: 60px;
+  width: 150px;
+  padding: 14px 20px 12px 20px;
+  text-align: center;
+  border: 2px solid var(--color-text-primary);
+  background-color: var(--color-background);
+  border-radius: 50%;
+  transform: rotate(-13deg);
+}
+
+.menu-body .submit-button:hover {
+  color: var(--color-background);
+  border: 2px solid var(--color-background);
+  background-color: var(--color-text-primary);
+}
+
+.menu.open .menu-body {
+  padding: 20px 60px;
+  max-height: 450px;
+  pointer-events: auto;
+  transition: all 1s;
+}
+
+nav.main-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-nav  .link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.main-nav .link-list li {
+  position: relative;
+  text-align: center;
+  margin-bottom: 8px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.main-nav  .link-list li:hover {
+  color: var(--color-text-hover);
+  text-shadow: var(--text-shadow-hover);
+}
+
+.main-nav .link-list .number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(110%, -5px);
+  font-size: 10px;
+}
+
+.link-list .gallery-link {
+  margin-top: 60px;
+}
+
+.about-body {
+  max-width: 460px;
+  margin: 18px auto;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.contact,
+.contact * {
+  color: var(--color-disabled);
+}
+
+.contact a:hover {
+  color: var(--color-text-hover);
+}
+
+@media screen and (max-width: 870px) {
+  .menu.open .menu-body {
+    padding: 20px 40px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .menu {
+    bottom: 20px;
+  }
+
+  .main-nav .link-list {
+    margin-top: 72px;
+  }
+
+  .menu-controls button {
+    width: 100px;
+    height: 36px;
+  }
+
+  .menu-body .submit-button {
+    left: 26px;
+    top: 48px;
+    width: 130px;
+    padding: 12px 20px 10px 20px;
+  }
+
+  .menu-body {
+    padding: 0 30px;
+  }
+
+  .menu.open .menu-body {
+    padding: 30px;
+  }
+
+  .about-body {
+    margin-top: 16px;
+  }
+
+  .about-body h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu.open .menu-body {
+    padding: 30px 20px;
+  }
+
+  .about-body {
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,208 @@
+section.dump {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.fly_button,
+.dump_button {
+  position: absolute;
+  align-items: center;
+  background-color: black;
+  width: 38px;
+  height: 38px;
+  border-radius: 38px;
+  padding-top: 4px;
+  border: none;
+  color: var(--color-text-primary);
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.fly_button {
+  left: 10%;
+  top: 10%;
+}
+
+.dump_button {
+  left: 85%;
+  top: 65%;
+}
+
+.dump-img {
+  height: 100%;
+  width: 100%;
+  background-image: url('./images/dump.jpeg');
+  background-size: cover;
+}
+
+.flying-garbage-list li {
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.flying-garbage-list img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.flying-garbage-list .trash {
+  animation-name: trash;
+  animation-duration: 80s;
+}
+
+.flying-garbage-list .glass {
+  animation-name: glass;
+  animation-duration: 60s;
+}
+
+.flying-garbage-list .jar {
+  animation-name: jar;
+  animation-duration: 60s;
+}
+
+.flying-garbage-list .large-bottle {
+  animation-name: large-bottle;
+  animation-duration: 70s;
+}
+
+.flying-garbage-list .small-bottle {
+  animation-name: small-bottle;
+  animation-duration: 70s;
+}
+
+@keyframes jar {
+  0% {
+    transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+  } 15% {
+    transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+  } 18% {
+    transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+  } 40% {
+    transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+  } 43% {
+    transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+  } 65% {
+    transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+  } 78% {
+    transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+  } 95% {
+    transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+  } 100% {
+    transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+  }
+}
+
+@keyframes small-bottle {
+  0% {
+    transform: translateX(80vw) translateY(100vh) rotateZ(0deg)
+  } 15% {
+    transform: translateX(-100vw) translateY(-100%) rotateZ(180deg)
+  } 33%{
+    transform: translateX(20vw) translateY(-200%) rotateZ(0deg)
+  } 40% {
+    transform: translateX(10vw) translateY(100vh) rotateZ(-180deg)
+  } 55% {
+    transform: translateX(50vw) translateY(-100%) rotateZ(180deg)
+  } 68% {
+    transform: translateX(20vw) translateY(-200%) rotateZ(-180deg)
+  } 75% {
+    transform: translateX(80vw) translateY(200vh) rotateZ(0deg)
+  } 100% {
+    transform: translateX(80vw) translateY(100vh) rotateZ(0deg)
+  }
+}
+
+@keyframes large-bottle {
+  0% {
+    transform: translateX(20vw) translateY(-200%) rotateZ(0deg)
+  } 15% {
+    transform: translateX(10vw) translateY(100vh) rotateZ(180deg)
+  } 28% {
+    transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+  } 40% {
+    transform: translateX(100vw) translateY(-100%) rotateZ(-180deg)
+  } 63% {
+    transform: translateX(100vw) translateY(-30%) rotateZ(-180deg)
+  } 75% {
+    transform: translateX(-200%) translateY(30vh) rotateZ(0deg)
+  } 79% {
+    transform: translateX(-200%) translateY(100vh) rotateZ(180deg)
+  } 85% {
+    transform: translateX(100vw) translateY(-100%) rotateZ(0deg)
+  } 100% {
+    transform: translateX(20vw) translateY(-200%) rotateZ(0deg)
+  }
+}
+
+@keyframes glass {
+  0% {
+    transform: translateX(-50%) translateY(-200%) rotateZ(0deg)
+  } 15% {
+    transform: translateX(100vw) translateY(50vh) rotateZ(180deg)
+  } 28% {
+    transform: translateX(-100%) translateY(-30%) rotateZ(0deg)
+  } 40% {
+    transform: translateX(100vw) translateY(50vh) rotateZ(-180deg)
+  } 53% {
+    transform: translateX(100vw) translateY(100vh) rotateZ(-180deg)
+  } 65% {
+    transform: translateX(120vw) translateY(-200%) rotateZ(0deg)
+  } 78% {
+    transform: translateX(-200%) translateY(100vh) rotateZ(180deg)
+  } 85% {
+    transform: translateX(50vw) translateY(-100%) rotateZ(0deg)
+  } 100% {
+    transform: translateX(-50%) translateY(-200%) rotateZ(0deg)
+  }
+}
+
+@keyframes trash {
+  0% {
+    transform: translateX(-50%) translateY(-200%) rotateZ(0deg)
+  } 15% {
+    transform: translateX(100vw) translateY(50vh) rotateZ(180deg)
+  } 28% {
+    transform: translateX(-100%) translateY(-30%) rotateZ(0deg)
+  } 40% {
+    transform: translateX(100vw) translateY(50vh) rotateZ(-180deg)
+  } 55% {
+    transform: translateX(100vw) translateY(100vh) rotateZ(-180deg)
+  } 65% {
+    transform: translateX(120vw) translateY(-200%) rotateZ(0deg)
+  } 79% {
+    transform: translateX(-200%) translateY(100vh) rotateZ(180deg)
+  } 85% {
+    transform: translateX(50vw) translateY(-100%) rotateZ(0deg)
+  } 100% {
+    transform: translateX(-50%) translateY(-200%) rotateZ(0deg)
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .fly_button {
+    left: 20%;
+    top: 20%;
+  }
+
+  .dump_button {
+    left: 75%;
+  }
+}
+
+
+
+
+
