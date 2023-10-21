@@ -10,6 +10,11 @@
     -webkit-gradient(113deg, rgba(10, 135, 250, 0.60) 4.5%, rgba(227, 231, 219, 0.00) 56%), 
     #F7F8E9;
   background: 
+    -o-linear-gradient(306deg, rgb(4 46 184 / 46%) 4.5%, rgba(253, 253, 253, 0) 100%), 
+    -o-linear-gradient(228deg, rgba(76, 11, 182, 0.60) 2.5%, rgba(226, 209, 215, 0.1) 80%), 
+    -o-linear-gradient(337deg, rgba(10, 135, 250, 0.60) 4.5%, rgba(227, 231, 219, 0.00) 56%), 
+    #F7F8E9;
+  background: 
     linear-gradient(144deg, rgb(4 46 184 / 46%) 4.5%, rgba(253, 253, 253, 0) 100%), 
     linear-gradient(222deg, rgba(76, 11, 182, 0.60) 2.5%, rgba(226, 209, 215, 0.1) 80%), 
     linear-gradient(113deg, rgba(10, 135, 250, 0.60) 4.5%, rgba(227, 231, 219, 0.00) 56%), 
@@ -23,9 +28,13 @@
   right: 25px;
   font-size: 24px;
   color: var(--color-text-primary);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
   cursor: pointer;
   z-index: 2;
-  user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
   -webkit-user-select: none;
 }

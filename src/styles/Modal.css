@@ -1,6 +1,8 @@
 .modal {
   position: relative;
-  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
   margin: 50px 50%;
   padding: 46px 100px 0 100px; 
   width: var(--container);
@@ -14,6 +16,8 @@
   scrollbar-width: none;
   color: var(--color-text-primary);
   z-index: 2;
+  -webkit-transition: padding 1s;
+  -o-transition: padding 1s;
   transition: padding 1s;
 }
 
@@ -23,8 +27,12 @@
 
 .modal-content li {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 7px;
   gap: 10px;
 }
@@ -49,6 +57,8 @@
   bottom: 0;
   width: 100%;
   height: 40px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(60.7%, #000));
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000 60.7%);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 60.7%);
   pointer-events: none;
 }
@@ -64,9 +74,3 @@
     padding: 46px 30px 0 30px; 
   }
 }
-
-
-
-
-
-

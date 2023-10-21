@@ -2,7 +2,9 @@
   position: fixed;
   bottom: 50px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: var(--container);
   max-width: var(--max-conteiner);
   min-width: var(--min-conteiner);
@@ -12,8 +14,12 @@
 
 .menu-controls {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-radius: 180px;
   z-index: 2;
 }
@@ -25,7 +31,12 @@
   border: 2px solid var(--color-background);
   color: var(--color-text-primary);
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
 }
 
@@ -39,12 +50,22 @@
 
 .menu-controls .white-box {
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   border-top: 2px solid var(--color-background);
   border-bottom: 2px solid var(--color-background);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
 }
 
@@ -52,6 +73,8 @@
 .menu.gallery .menu-controls .white-box {
   border-top: 2px solid var(--color-disabled);
   border-bottom: 2px solid var(--color-disabled);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
 }
 
@@ -59,6 +82,8 @@
 .menu.gallery .menu-controls button {
   border: 2px solid var(--color-disabled);
   color: var(--color-disabled);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
 }
 
@@ -67,7 +92,9 @@
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 100%;
   height: 440px;
   padding: 0 60px;
@@ -76,6 +103,8 @@
   color: var(--color-text-primary);
   overflow: hidden;
   pointer-events: none;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
 }
 
@@ -89,7 +118,9 @@
   border: 2px solid var(--color-text-primary);
   background-color: var(--color-background);
   border-radius: 50%;
-  transform: rotate(-13deg);
+  -webkit-transform: rotate(-13deg);
+      -ms-transform: rotate(-13deg);
+          transform: rotate(-13deg);
 }
 
 .menu-body .submit-button:hover {
@@ -102,21 +133,39 @@
   padding: 20px 60px;
   max-height: 450px;
   pointer-events: auto;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
 }
 
 nav.main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
 }
 
 .main-nav  .link-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 56px;
 }
 
@@ -124,7 +173,10 @@ nav.main-nav {
   position: relative;
   text-align: center;
   margin-bottom: 8px;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -137,7 +189,9 @@ nav.main-nav {
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(110%, -5px);
+  -webkit-transform: translate(110%, -5px);
+      -ms-transform: translate(110%, -5px);
+          transform: translate(110%, -5px);
   font-size: 10px;
 }
 
