@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Authentic Sans Condensed";
-  src: url("fonts/AUTHENTICSans-Condensed.woff");
-  src: url("fonts/AUTHENTICSans-Condensed.woff2");
+  src: url("./fonts/AUTHENTICSans-Condensed.woff");
+  src: url("./fonts/AUTHENTICSans-Condensed.woff2");
 }
 
 :root {
