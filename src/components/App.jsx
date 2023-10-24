@@ -110,6 +110,12 @@ function App() {
       case 'code': 
         setTitle('Code')
         break
+      case 'flying-garbage': 
+        setTitle('Flying Garbage')
+        break
+      case 'show-the-dump': 
+        setTitle('The Dump')
+        break
       default:
         setTitle('')
     }

@@ -6,12 +6,22 @@ function Dump({ onHandleGarbageClick, onHandleGarbageHover, onHandleGarbageMouse
 
   return (
     <section className="dump">
-      <button onClick={() => setFlyingGarbage(state => !state)} className="fly_button">1</button>
-      <button onClick={() => setDumpIsOpen(state => !state)} className="dump_button">2</button>
-      {dumpIsOpen
+      <button
+        onClick={() => setFlyingGarbage(state => !state)}
+        className="fly_button"
+        data-event="flying-garbage"
+        onMouseEnter={onHandleGarbageHover}
+        onMouseLeave={onHandleGarbageMouseOut}>1</button>
+      <button
+        onClick={() => setDumpIsOpen(state => !state)}
+        className="dump_button"
+        data-event="show-the-dump"
+        onMouseEnter={onHandleGarbageHover}
+        onMouseLeave={onHandleGarbageMouseOut}>2</button>
+      { dumpIsOpen
         ? <div className="dump-img"></div>
         : <div className="background"></div>}
-      {flyingGarbage
+      { flyingGarbage
       && <FlyingGarbage
           onHandleGarbageClick={onHandleGarbageClick}
           onHandleGarbageHover={onHandleGarbageHover}
