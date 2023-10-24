@@ -21,6 +21,8 @@ function App() {
   const [menuContent, setMenuContent] = useState('')
   const [currentContent, setCurrentContent] = useState({})
   const [title, setTitle] = useState('')
+  const [dumpIsOpen, setDumpIsOpen] = useState(false)
+  const [flyingGarbage, setFlyingGarbage] = useState(false)
 
   function toggleMenu(e) {
     if (!e.target) return
@@ -125,6 +127,26 @@ function App() {
     !modalIsOpen && setTitle('')
   }
 
+  function handleDumpButtons(e) {
+    if (!e.target) return
+    let elem = e.target.closest(`[data-event]`)
+    if (!elem) return
+
+    switch (elem.dataset.event) {
+      case 'show-the-dump':
+        setDumpIsOpen(state => !state)
+        break
+      case 'flying-garbage':
+        setFlyingGarbage(state => !state)
+        break
+    }
+
+    !modalIsOpen && window.addEventListener("touchend", (event) => {
+      setTitle('')
+      alert('kek')
+    }, true )
+  }
+
   return (
     <div className="app">
       <Menu
@@ -158,6 +180,9 @@ function App() {
       { galleryIsOpen
         ? <Gallery onSetGalleryIsOpen={setGalleryIsOpen}/>
         : <Dump 
+            dumpIsOpen={dumpIsOpen}
+            flyingGarbage={flyingGarbage}
+            onHandleDumpButtons={handleDumpButtons}
             onHandleGarbageClick={handleGarbageClick}
             onHandleGarbageHover={handleGarbageHover}
             onHandleGarbageMouseOut={handleGarbageMouseOut}/>

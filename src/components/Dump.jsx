@@ -1,19 +1,18 @@
 import { useState } from 'react'
 
-function Dump({ onHandleGarbageClick, onHandleGarbageHover, onHandleGarbageMouseOut }) {
-  const [dumpIsOpen, setDumpIsOpen] = useState(false)
-  const [flyingGarbage, setFlyingGarbage] = useState(false)
+function Dump({ dumpIsOpen, flyingGarbage, onHandleDumpButtons, onHandleGarbageClick, onHandleGarbageHover, onHandleGarbageMouseOut }) {
+  
 
   return (
     <section className="dump">
       <button
-        onClick={() => setFlyingGarbage(state => !state)}
+        onClick={onHandleDumpButtons}
         className="fly_button"
         data-event="flying-garbage"
         onMouseEnter={onHandleGarbageHover}
         onMouseLeave={onHandleGarbageMouseOut}>1</button>
       <button
-        onClick={() => setDumpIsOpen(state => !state)}
+        onClick={onHandleDumpButtons}
         className="dump_button"
         data-event="show-the-dump"
         onMouseEnter={onHandleGarbageHover}
