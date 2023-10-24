@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import '../styles/App.css'
 import '../styles//Modal.css'
@@ -19,6 +19,8 @@ function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [modalContent, setModalContent] = useState('')
   const [menuContent, setMenuContent] = useState('')
+  const [currentContent, setCurrentContent] = useState({})
+  const [title, setTitle] = useState('')
 
   function toggleMenu(e) {
     if (!e.target) return
@@ -26,6 +28,8 @@ function App() {
     let currentMenuContent = e.target.dataset.event
     e.preventDefault()
     e.stopPropagation()
+
+    setTitle('')
 
     if (menuIsOpen == false) {
       setMenuIsOpen(true)
@@ -44,30 +48,36 @@ function App() {
     }
   }
 
-  let currentContent
-  let title
+  function handleLinkClick(ref) {
+    setModalContent(ref)
 
-  switch (modalContent) {
-    case 'galeries':
-      currentContent = galleryList
-      title = 'Website Galleries'
-      break
-    case 'images':
-      currentContent = graphicList
-      title = 'Tools for graphics'
-      break
-    case 'fonts':
-      currentContent = fontList
-      title = 'Fonts'
-      break
-    case 'stocks':
-      currentContent = stockList
-      title = 'Stocks'
-      break
-    case 'code': 
-      currentContent = codeList
-      title = 'Code'
-      break
+    switch (ref) {
+      case 'galeries':
+        setCurrentContent(galleryList)
+        setTitle('Website Galleries')
+        break
+      case 'images':
+        setCurrentContent(graphicList)
+        setTitle('Tools for graphics')
+        break
+      case 'fonts':
+        setCurrentContent(fontList)
+        setTitle('Fonts')
+        break
+      case 'stocks':
+        setCurrentContent(stockList)
+        setTitle('Stocks')
+        break
+      case 'code': 
+        setCurrentContent(codeList)
+        setTitle('Code')
+        break
+      default:
+        setTitle('')
+    }
+
+    setModalIsOpen(true)
+    setMenuIsOpen(false)
   }
 
   return (
@@ -77,15 +87,16 @@ function App() {
         galleryIsOpen={galleryIsOpen}>
         <MenuControls
           galleryIsOpen={galleryIsOpen}
-          onToggleMenu={toggleMenu}/>
+          onToggleMenu={toggleMenu}
+          title={title}
+          />
         { !galleryIsOpen &&
           <MenuBody onToggleMenu={toggleMenu}>
             { menuContent === 'menu'
               ? <MenuLinks
-                onSetGalleryIsOpen={setGalleryIsOpen}
-                onSetMenuIsOpen={setMenuIsOpen}
-                onSetModalContent={setModalContent}
-                onSetModalIsOpen={setModalIsOpen}/>
+                  onSetGalleryIsOpen={setGalleryIsOpen}
+                  onSetMenuIsOpen={setMenuIsOpen}
+                  onHandleLinkClick={handleLinkClick}/>
               : menuContent === 'about' ? <About />
               : null
             }
@@ -96,6 +107,7 @@ function App() {
         <Modal 
           currentContent={currentContent}
           title={title}
+          onSetTitle={setTitle}
           onSetModalIsOpen={setModalIsOpen}/>
       }
       { galleryIsOpen

@@ -13,7 +13,7 @@ function Menu({ galleryIsOpen, menuIsOpen, children }) {
   )
 }
 
-function MenuControls({galleryIsOpen, onToggleMenu}) {
+function MenuControls({galleryIsOpen, onToggleMenu, title}) {
   return(
     <div className='menu-controls'>
       <MenuButton
@@ -22,7 +22,12 @@ function MenuControls({galleryIsOpen, onToggleMenu}) {
         galleryIsOpen={galleryIsOpen}>
         Menu
       </MenuButton>
-      <div className="white-box">{galleryIsOpen && `Dump Gallery`}</div>
+      <div className="white-box">
+        {galleryIsOpen 
+          ? `Dump Gallery`
+          : title
+        }
+      </div>
       <MenuButton
         side='right'
         onToggleMenu={onToggleMenu}
@@ -53,14 +58,8 @@ function MenuBody({onToggleMenu, children}) {
   )
 }
 
-function MenuLinks({onSetGalleryIsOpen, onSetMenuIsOpen, onSetModalContent, onSetModalIsOpen}) {
+function MenuLinks({onSetGalleryIsOpen, onSetMenuIsOpen, onHandleLinkClick }) {
   let totalItems = links.length
-
-  function handleClick(ref) {
-    onSetModalContent(ref)
-    onSetModalIsOpen(true)
-    onSetMenuIsOpen(false)
-  }
 
   function openGallery() {
     onSetGalleryIsOpen(true)
@@ -73,7 +72,7 @@ function MenuLinks({onSetGalleryIsOpen, onSetMenuIsOpen, onSetModalContent, onSe
         { links.map((link, ind) => 
           <li data-event={link.ref}
             key={link.ref}
-            onClick={() => handleClick(link.ref)}>
+            onClick={() => onHandleLinkClick(link.ref)}>
             {link.name}
             <span className="number">[0{ind + 1}/0{totalItems}]</span>
           </li>

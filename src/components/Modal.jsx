@@ -1,6 +1,11 @@
 import { useState } from 'react'
 
-function Modal({ currentContent, title, onSetModalIsOpen }) {
+function Modal({ currentContent, title, onSetTitle, onSetModalIsOpen }) {
+
+  function closeModal() {
+    onSetTitle('')
+    onSetModalIsOpen(false)
+  }
 
   return(
     <section className='modal'>
@@ -15,7 +20,7 @@ function Modal({ currentContent, title, onSetModalIsOpen }) {
       </ul>
       <div
         className='close'
-        onClick={() => onSetModalIsOpen(false)}>
+        onClick={closeModal}>
         X
       </div>
       <div className="modal-overlay"></div>

@@ -182,7 +182,7 @@ export const dumpGallery = [
 
 export const codeList = [
   {
-    name: 'Web animation',
+    name: 'GSAP animation lib',
     ref: 'https://greensock.com/'
   },
   {
