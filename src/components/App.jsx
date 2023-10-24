@@ -82,11 +82,41 @@ function App() {
 
   function handleGarbageClick(e) {
     if (!e.target) return
-
     let elem = e.target.closest(`[data-event]`)
     if (!elem) return
 
     handleLinkClick(elem.dataset.event)
+  }
+
+  function handleGarbageHover(e) {
+    if (!e.target) return
+    let elem = e.target.closest(`[data-event]`)
+    if (!elem) return
+    if (modalIsOpen) return
+
+    switch (elem.dataset.event) {
+      case 'galeries':
+        setTitle('Website Galleries')
+        break
+      case 'images':
+        setTitle('Tools for graphics')
+        break
+      case 'fonts':
+        setTitle('Fonts')
+        break
+      case 'stocks':
+        setTitle('Stocks')
+        break
+      case 'code': 
+        setTitle('Code')
+        break
+      default:
+        setTitle('')
+    }
+  }
+
+  function handleGarbageMouseOut() {
+    !modalIsOpen && setTitle('')
   }
 
   return (
@@ -123,9 +153,8 @@ function App() {
         ? <Gallery onSetGalleryIsOpen={setGalleryIsOpen}/>
         : <Dump 
             onHandleGarbageClick={handleGarbageClick}
-            onSetModalContent={setModalContent}
-            onSetModalIsOpen={setModalIsOpen}
-            onSetMenuIsOpen={setMenuIsOpen}/>
+            onHandleGarbageHover={handleGarbageHover}
+            onHandleGarbageMouseOut={handleGarbageMouseOut}/>
       }
     </div>
   )
