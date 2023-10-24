@@ -80,6 +80,15 @@ function App() {
     setMenuIsOpen(false)
   }
 
+  function handleGarbageClick(e) {
+    if (!e.target) return
+
+    let elem = e.target.closest(`[data-event]`)
+    if (!elem) return
+
+    handleLinkClick(elem.dataset.event)
+  }
+
   return (
     <div className="app">
       <Menu
@@ -113,6 +122,7 @@ function App() {
       { galleryIsOpen
         ? <Gallery onSetGalleryIsOpen={setGalleryIsOpen}/>
         : <Dump 
+            onHandleGarbageClick={handleGarbageClick}
             onSetModalContent={setModalContent}
             onSetModalIsOpen={setModalIsOpen}
             onSetMenuIsOpen={setMenuIsOpen}/>

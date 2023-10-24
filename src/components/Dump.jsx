@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Dump({ onSetModalContent, onSetModalIsOpen, onSetMenuIsOpen }) {
+function Dump({ onHandleGarbageClick }) {
   const [dumpIsOpen, setDumpIsOpen] = useState(false)
   const [flyingGarbage, setFlyingGarbage] = useState(false)
 
@@ -13,42 +13,29 @@ function Dump({ onSetModalContent, onSetModalIsOpen, onSetMenuIsOpen }) {
         : <div className="background"></div>}
       {flyingGarbage
       && <FlyingGarbage
-          onSetModalContent={onSetModalContent}
-          onSetModalIsOpen={onSetModalIsOpen}
-          onSetMenuIsOpen={onSetMenuIsOpen}/>}
+          onHandleGarbageClick={onHandleGarbageClick}/>
+      }
     </section>
   )
 }
 
-function FlyingGarbage({ onSetModalContent, onSetModalIsOpen, onSetMenuIsOpen }) {
-
-  function handleClick(e) {
-    if (!e.target) return
-
-    let elem = e.target.closest(`[data-event]`)
-
-    if (!elem) return
-
-    onSetModalContent(elem.dataset.event)
-    onSetModalIsOpen(true)
-    onSetMenuIsOpen(false)
-  }
+function FlyingGarbage({ onHandleGarbageClick }) {
 
   return (
     <ul className="flying-garbage-list">
-      <li className="trash" data-event='galeries' onClick={handleClick}>
+      <li className="trash" data-event='galeries' onClick={onHandleGarbageClick}>
         <img src="/images/flying-garbage/trash.png" width="350" height="272" alt="trash"/>
       </li>
-      <li className="glass" data-event='images' onClick={handleClick}>
+      <li className="glass" data-event='images' onClick={onHandleGarbageClick}>
         <img src="/images/flying-garbage/glass.png" width="241" height="176" alt="glass"/>
       </li>
-      <li className="jar" data-event='fonts' onClick={handleClick}>
+      <li className="jar" data-event='fonts' onClick={onHandleGarbageClick}>
         <img src="/images/flying-garbage/jar.png" width="275" height="271" alt="jar"/>
       </li>
-      <li className="large-bottle" data-event='stocks' onClick={handleClick}>
+      <li className="large-bottle" data-event='stocks' onClick={onHandleGarbageClick}>
         <img src="/images/flying-garbage/large-bottle.png" width="257" height="231" alt="large-bottle"/>
       </li>
-      <li className="small-bottle" data-event='code' onClick={handleClick}>
+      <li className="small-bottle" data-event='code' onClick={onHandleGarbageClick}>
         <img src="/images/flying-garbage/small-bottle.png" width="300" height="245" alt="small-bottle"/>
       </li>
     </ul>
