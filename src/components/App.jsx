@@ -141,11 +141,8 @@ function App() {
         break
     }
 
-    if (e.type == 'touchstart' || e.type == 'touchend') {
-      setTitle('')
-    }
-
-    alert(e.type)
+    let screenWith = window.screen.width || window.innerWidth
+    if (screenWith < 480) setTitle('')
   }
 
   return (
