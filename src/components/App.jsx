@@ -141,7 +141,7 @@ function App() {
         break
     }
 
-    !modalIsOpen && window.addEventListener("touchend", (event) => {
+    !modalIsOpen && window.addEventListener("touchstart", (event) => {
       setTitle('')
       alert('kek')
     }, true )
