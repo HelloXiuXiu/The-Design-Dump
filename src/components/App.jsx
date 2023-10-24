@@ -145,7 +145,7 @@ function App() {
       setTitle('')
     }
 
-    alert('e.type')
+    alert(e.type)
   }
 
   return (
