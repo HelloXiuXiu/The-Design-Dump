@@ -129,7 +129,7 @@ function App() {
 
   function handleDumpButtons(e) {
     if (!e.target) return
-    let elem = e.target.closest(`[data-event]`)
+    let elem = e.target.closest('[data-event]')
     if (!elem) return
 
     switch (elem.dataset.event) {
@@ -141,10 +141,9 @@ function App() {
         break
     }
 
-    !modalIsOpen && window.addEventListener("touchstart", (event) => {
+    if (e.type == 'touchstart' || e.type == 'touchend') {
       setTitle('')
-      alert('kek')
-    }, true )
+    }
   }
 
   return (
