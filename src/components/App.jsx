@@ -144,6 +144,8 @@ function App() {
     if (e.type == 'touchstart' || e.type == 'touchend') {
       setTitle('')
     }
+
+    alert('e.type')
   }
 
   return (
