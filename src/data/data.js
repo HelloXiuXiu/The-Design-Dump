@@ -23,6 +23,14 @@ export const links = [
 
 export const dumpGallery = [
   {
+    image: 'image-41.jpg',
+    ref: 'https://untangld.co/'
+  },
+  {
+    image: 'image-40.jpg',
+    ref: 'https://seizon.io/'
+  },
+  {
     image: 'image-39.jpg',
     ref: 'https://ellipsis.zip/'
   },
