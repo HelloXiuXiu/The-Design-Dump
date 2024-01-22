@@ -194,6 +194,10 @@ export const codeList = [
     ref: 'https://greensock.com/'
   },
   {
+    name: 'JS + CSS animation article',
+    ref: 'https://css-tricks.com/controlling-css-animations-transitions-javascript/'
+  },
+  {
     name: 'Css animation',
     ref: 'https://web.dev/animations-guide/'
   },
