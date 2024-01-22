@@ -5,6 +5,7 @@ React + Vite. Run:
 <br>
 
 ```sh
+npm i
 npm run dev
 ```
 <br>
