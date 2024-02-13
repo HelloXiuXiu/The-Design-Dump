@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
 function Dump({ dumpIsOpen, flyingGarbage, onHandleDumpButtons, onHandleGarbageClick, onHandleGarbageHover, onHandleGarbageMouseOut }) {
-  
-
   return (
     <section className="dump">
       <button
@@ -31,7 +29,6 @@ function Dump({ dumpIsOpen, flyingGarbage, onHandleDumpButtons, onHandleGarbageC
 }
 
 function FlyingGarbage({ onHandleGarbageClick, onHandleGarbageHover, onHandleGarbageMouseOut }) {
-
   return (
     <ul className="flying-garbage-list">
       <li className="trash"

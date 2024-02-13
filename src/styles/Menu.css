@@ -9,7 +9,7 @@
   max-width: var(--max-conteiner);
   min-width: var(--min-conteiner);
   border-radius: 20px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .menu-controls {

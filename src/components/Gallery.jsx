@@ -1,12 +1,15 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { dumpGallery } from './../data/data.js'
 
-function Gallery({ onSetGalleryIsOpen }) {
+function Gallery() {
   return (
     <section className="gallery">
       <nav className="gallery-navigation">
-        <div className="back" onClick={() => onSetGalleryIsOpen(false)}>Back to the dump</div>
+        <div className="back">
+          <Link to="/">Back to the dump</Link>
+        </div>
         <div>Curated by
           <a href="https://xiuxiuxiuxiuxiu.com/" target="_blank" rel="nooper nofollow"> Xiu Xiu</a>
         </div>

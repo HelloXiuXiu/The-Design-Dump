@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import '../styles/App.css'
 import '../styles//Modal.css'
@@ -51,6 +52,8 @@ function App() {
   }
 
   function handleLinkClick(ref) {
+    if (!ref) return
+
     setModalContent(ref)
 
     switch (ref) {
@@ -146,46 +149,53 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <Menu
-        menuIsOpen={menuIsOpen}
-        galleryIsOpen={galleryIsOpen}>
-        <MenuControls
-          galleryIsOpen={galleryIsOpen}
-          onToggleMenu={toggleMenu}
-          title={title}
-          />
-        { !galleryIsOpen &&
-          <MenuBody onToggleMenu={toggleMenu}>
-            { menuContent === 'menu'
-              ? <MenuLinks
-                  onSetGalleryIsOpen={setGalleryIsOpen}
-                  onSetMenuIsOpen={setMenuIsOpen}
-                  onHandleLinkClick={handleLinkClick}/>
-              : menuContent === 'about' ? <About />
-              : null
-            }
-          </MenuBody>
+    <BrowserRouter>
+      <div className="app">
+        <Menu
+          menuIsOpen={menuIsOpen}
+          galleryIsOpen={galleryIsOpen}>
+          <MenuControls
+            galleryIsOpen={galleryIsOpen}
+            onToggleMenu={toggleMenu}
+            title={title}
+            />
+            <MenuBody onToggleMenu={toggleMenu}>
+              { menuContent === 'menu'
+                ? <MenuLinks
+                    onSetGalleryIsOpen={setGalleryIsOpen}
+                    onSetMenuIsOpen={setMenuIsOpen}
+                    onHandleLinkClick={handleLinkClick}
+                    onSetTitle={setTitle}/>
+                : menuContent === 'about' ? <About />
+                : null
+              }
+            </MenuBody>
+        </Menu>
+        { modalIsOpen &&
+          <Modal 
+            currentContent={currentContent}
+            title={title}
+            onSetTitle={setTitle}
+            onSetModalIsOpen={setModalIsOpen}/>
         }
-      </Menu>
-      { modalIsOpen &&
-        <Modal 
-          currentContent={currentContent}
-          title={title}
-          onSetTitle={setTitle}
-          onSetModalIsOpen={setModalIsOpen}/>
-      }
-      { galleryIsOpen
-        ? <Gallery onSetGalleryIsOpen={setGalleryIsOpen}/>
-        : <Dump 
-            dumpIsOpen={dumpIsOpen}
-            flyingGarbage={flyingGarbage}
-            onHandleDumpButtons={handleDumpButtons}
-            onHandleGarbageClick={handleGarbageClick}
-            onHandleGarbageHover={handleGarbageHover}
-            onHandleGarbageMouseOut={handleGarbageMouseOut}/>
-      }
-    </div>
+        <Routes>
+          <Route
+            path="/"
+            element={ <Dump 
+              dumpIsOpen={dumpIsOpen}
+              flyingGarbage={flyingGarbage}
+              onHandleDumpButtons={handleDumpButtons}
+              onHandleGarbageClick={handleGarbageClick}
+              onHandleGarbageHover={handleGarbageHover}
+              onHandleGarbageMouseOut={handleGarbageMouseOut} /> }
+          />
+          <Route
+            path="gallery"
+            element={ <Gallery /> }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 

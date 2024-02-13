@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { links } from './../data/data.js'
 
@@ -58,12 +59,12 @@ function MenuBody({onToggleMenu, children}) {
   )
 }
 
-function MenuLinks({onSetGalleryIsOpen, onSetMenuIsOpen, onHandleLinkClick }) {
+function MenuLinks({ onSetMenuIsOpen, onHandleLinkClick, onSetTitle }) {
   let totalItems = links.length
 
-  function openGallery() {
-    onSetGalleryIsOpen(true)
+  function handleGallery() {
     onSetMenuIsOpen(false)
+    onSetTitle('Dump Gallery')
   }
 
   return(
@@ -77,10 +78,11 @@ function MenuLinks({onSetGalleryIsOpen, onSetMenuIsOpen, onHandleLinkClick }) {
             <span className="number">[0{ind + 1}/0{totalItems}]</span>
           </li>
           )}
-        <li className="gallery-link" onClick={openGallery}>
-          The Dump Gallery
-          <span className="number">[0{totalItems + 1}/0{totalItems + 1}]</span>
-        </li>
+        
+          <li className="gallery-link" onClick={() => handleGallery()}>
+            <Link to="/gallery">The Dump Gallery</Link>
+            <span className="number">[0{totalItems + 1}/0{totalItems + 1}]</span>
+          </li>
       </ul>
       <a
         className="submit-button" 

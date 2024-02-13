@@ -8,6 +8,7 @@ section.gallery {
   overflow: auto;
   color: var(--color-text-primary);
   background-color: var(--color-background);
+  z-index: 1;
 }
 
 section.gallery h1 {
