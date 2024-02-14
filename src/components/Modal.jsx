@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 function Modal({ currentContent, title, onSetTitle, onSetModalIsOpen }) {
-
   function closeModal() {
     onSetTitle('')
     onSetModalIsOpen(false)

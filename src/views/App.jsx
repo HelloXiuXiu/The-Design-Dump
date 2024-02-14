@@ -7,10 +7,10 @@ import '../styles/Menu.css'
 import '../styles/Gallery.css'
 import '../styles/Dump.css'
 
-import Modal from './Modal.jsx'
-import { Menu, MenuControls, MenuBody, MenuLinks, About } from './Menu.jsx'
+import Modal from '../components/Modal.jsx'
+import Dump from '../components/Dump.jsx'
+import { Menu, MenuControls, MenuBody, MenuLinks, About } from '../components/Menu.jsx'
 import Gallery from './Gallery.jsx'
-import Dump from './Dump.jsx'
 
 import { codeList, stockList, fontList, graphicList, galleryList } from './../data/data.js'
 
