@@ -23,6 +23,26 @@ export const links = [
 
 export const dumpGallery = [
   {
+    image: 'image-46.jpg',
+    ref: 'https://www.themidnightclub.com/'
+  },
+  {
+    image: 'image-45.jpg',
+    ref: 'https://www.bramnaus.com/'
+  },
+  {
+    image: 'image-44.jpg',
+    ref: 'https://www.jeandawson.com/'
+  },
+  {
+    image: 'image-43.jpg',
+    ref: 'https://mouthwash.studio/'
+  },
+  {
+    image: 'image-42.jpg',
+    ref: 'https://research.mouthwash.studio/'
+  },
+  {
     image: 'image-41.jpg',
     ref: 'https://untangld.co/'
   },
