@@ -191,7 +191,7 @@ function App() {
           />
           <Route
             path="gallery"
-            element={ <Gallery /> }
+            element={ <Gallery replace /> }
           />
         </Routes>
       </div>
