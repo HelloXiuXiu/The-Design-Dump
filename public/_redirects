@@ -1,1 +1,3 @@
+# netlify configuration that allows
+# relative paths to load correctly for SPA
 /*  /index.html  200
